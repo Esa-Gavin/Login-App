@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classes from './Login.module.css';
 
 const Login = (props) => {
+    const [enteredEmail, setEnteredEmail]  = useState('');
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        
+    }
+
     return (
         <Card className={classes.login}>
             <form onSubmit={submitHandler}>
