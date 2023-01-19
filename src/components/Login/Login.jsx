@@ -7,8 +7,8 @@ const Login = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        
-    }
+        props.onLogin(enteredEmail);
+    };
 
     return (
         <Card className={classes.login}>
