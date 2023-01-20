@@ -6,10 +6,12 @@ const Login = (props) => {
     const [enteredEmail, setEnteredEmail]  = useState('');
     const [emailIsValid, setEmailIsValid] = useState();
     const [formIsValid, setFormIsValid] = useState(false);
-    
+    const [passwordIsValid, setPasswordIsValid] = useState();
     
     const emailChangeHandler = (event) => {
         setEnteredEmail(event.target.value);
+
+        setFormIsValid(event.target.value.includes('@') &&)
     }
     
     const submitHandler = (event) => {
