@@ -7,11 +7,13 @@ const Login = (props) => {
     const [emailIsValid, setEmailIsValid] = useState();
     const [formIsValid, setFormIsValid] = useState(false);
     const [passwordIsValid, setPasswordIsValid] = useState();
-    
+    const [enteredPassword, setEnteredPassword] = useState('');
+
+
     const emailChangeHandler = (event) => {
         setEnteredEmail(event.target.value);
 
-        setFormIsValid(event.target.value.includes('@') &&)
+        setFormIsValid(event.target.value.includes('@') && )
     }
     
     const submitHandler = (event) => {
