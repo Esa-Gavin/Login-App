@@ -17,6 +17,10 @@ const Login = (props) => {
         );
     };
 
+    const validatePasswordHandler = () => {
+        setPasswordIsValid(enteredPassword.trim().length > 6);
+    };
+
 
     const emailChangeHandler = (event) => {
         setEnteredEmail(event.target.value);
