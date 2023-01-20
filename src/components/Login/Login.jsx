@@ -17,6 +17,10 @@ const Login = (props) => {
         );
     };
 
+    const validateEmailHandler = () => {
+        setEmailIsValid(enteredEmail.includes('@'));
+    }
+
     const validatePasswordHandler = () => {
         setPasswordIsValid(enteredPassword.trim().length > 6);
     };
