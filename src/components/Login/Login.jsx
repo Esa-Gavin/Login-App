@@ -4,7 +4,7 @@ import classes from './Login.module.css';
 
 const Login = (props) => {
     const [enteredEmail, setEnteredEmail]  = useState('');
-
+    const [emailIsValid, setEmailIsValid] = useState();
     const submitHandler = (event) => {
         event.preventDefault();
         props.onLogin(enteredEmail);
@@ -13,7 +13,9 @@ const Login = (props) => {
     return (
         <Card className={classes.login}>
             <form onSubmit={submitHandler}>
-                
+                <div className=''>
+
+                </div>
             </form>
 
         </Card>
