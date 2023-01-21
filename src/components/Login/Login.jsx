@@ -60,7 +60,7 @@ const Login = (props) => {
             passwordIsValid === false ? classes.invalid : ""
           }`}
         >
-          <label></label>
+          <label htmlFor="password">Password</label>
         </div>
       </form>
     </Card>
