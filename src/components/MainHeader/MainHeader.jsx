@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 const MainHeader = (props) => {
     return (
         <header className={classes['main-header']}>
-            <h1>A Typical Page</h1>
+            <h1>My Login App</h1>
             <Navigation isLoggedIn={props.isAuthenticated} onLogout={props.onLogout} />
         </header>
     );
