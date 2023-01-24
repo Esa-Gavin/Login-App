@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import classes from "./Login.module.css";
-
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -12,12 +11,16 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState("");
 
+  // we use use effect so as to have one logic of validating //
+  // the email and password //
+  useEffect(() => {
+    setFormIsValid(
+      enteredEmail.includes("@") && enteredPassword.trim().length > 6
+    );
+  }, [enteredEmail, enteredPassword]);
+
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
-
-    setFormIsValid(
-      event.target.value.trim().length > 6 && enteredEmail.includes("@")
-    );
   };
 
   const validateEmailHandler = () => {
@@ -30,10 +33,6 @@ const Login = (props) => {
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
-
-    setFormIsValid(
-      event.target.value.includes("@") && enteredPassword.trim().length > 6
-    );
   };
 
   const submitHandler = (event) => {
