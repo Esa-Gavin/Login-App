@@ -30,6 +30,9 @@ const App = () => {
   };
 
   const logoutHandler = () => {
+    // remove item is to remove the login key //
+    // in the local storage on the web//
+    localStorage.removeItem('hasLoggedIn');
     setIsLoggedIn(false);
   };
 
