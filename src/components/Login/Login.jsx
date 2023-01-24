@@ -14,9 +14,18 @@ const Login = (props) => {
   // we use use effect so as to have one logic of validating //
   // the email and password //
   useEffect(() => {
-    setFormIsValid(
-      enteredEmail.includes("@") && enteredPassword.trim().length > 6
-    );
+    const identifier = setTimeout(() => {
+      console.log("checking form validity!");
+      setFormIsValid(
+        enteredEmail.includes("@") && enteredPassword.trim().length > 6
+      );
+    }, 700);
+    // 👇 the return is for cleanup code so as to avoid memory leaks //
+    // and it runs before using the use effect the next time //
+    return () => {
+      console.log("Cleanup my bitch!!!");
+      clearTimeout(identifier); //👈 this is to clear the timer before we set a new one //
+    };
   }, [enteredEmail, enteredPassword]);
 
   const passwordChangeHandler = (event) => {
