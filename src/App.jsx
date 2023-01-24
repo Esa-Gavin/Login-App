@@ -9,14 +9,15 @@ const App = () => {
 
   
   // use effect normally runs after the component functions //
-  // have been executed //
+  // have been executed. it will only run if the dependencies //
+  // have changed //
   useEffect(() => {
     const storedUserLoginInInformation = localStorage.getItem("hasLoggedIn");
 
     if (storedUserLoginInInformation === "1") {
       setIsLoggedIn(true);
     }
-  });
+  }, []);
 
   const loginHandler = (email, password) => {
     // we should of course check email and password //
