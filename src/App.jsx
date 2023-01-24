@@ -8,7 +8,8 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   
-
+  // use effect normally runs after the component functions //
+  // have been executed //
   useEffect(() => {
     const storedUserLoginInInformation = localStorage.getItem("hasLoggedIn");
 
