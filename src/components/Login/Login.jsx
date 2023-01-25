@@ -23,7 +23,7 @@ const Login = (props) => {
     // 👇 the return is for cleanup code so as to avoid memory leaks //
     // and it runs before using the use effect the next time //
     return () => {
-      console.log("Cleanup my bitch!!!");
+      console.log("Cleanup!");
       clearTimeout(identifier); //👈 this is to clear the timer before we set a new one //
     };
   }, [enteredEmail, enteredPassword]);
