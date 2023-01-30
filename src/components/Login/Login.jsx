@@ -12,7 +12,7 @@ const Login = (props) => {
   const [enteredPassword, setEnteredPassword] = useState("");
 
   // we use use effect so as to have one logic of validating //
-  // the email and password //
+  // the email and password! //
   useEffect(() => {
     const identifier = setTimeout(() => {
       console.log("checking form validity!");
