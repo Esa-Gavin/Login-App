@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import classes from "./Login.module.css";
+import { useReducer } from "react";
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -10,6 +11,8 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState("");
+
+  const [emailState, dispatchEmail] = useReducer();
 
   useEffect(() => {
     console.log("EFFECT RUNNING!");
