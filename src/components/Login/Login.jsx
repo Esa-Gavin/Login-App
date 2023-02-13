@@ -11,9 +11,15 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState("");
 
+  useEffect(() => {
+    console.log("EFFECT RUNNING!");
+    return () => {
+      console.log("EFFECT CLEANUP");
+    };
+  }, []);
   // we use use effect so as to have one logic of validating //
   // the email and password! //
-  useEffect(() => {
+  /* useEffect(() => {
     const identifier = setTimeout(() => {
       console.log("checking form validity!");
       setFormIsValid(
@@ -26,7 +32,7 @@ const Login = (props) => {
       console.log("Cleanup!");
       clearTimeout(identifier); //👈 this is to clear the timer before we set a new one //
     };
-  }, [enteredEmail, enteredPassword]);
+  }, [enteredEmail, enteredPassword]); */
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
